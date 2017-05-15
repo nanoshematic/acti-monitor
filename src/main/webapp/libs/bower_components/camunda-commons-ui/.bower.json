@@ -1,0 +1,14 @@
+{
+  "name": "camunda-commons-ui",
+  "homepage": "https://github.com/camunda/camunda-commons-ui",
+  "_release": "eab3a4eae2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "eab3a4eae24bbc885115dab21ba203ffb16f101b"
+  },
+  "_source": "git://github.com/camunda/camunda-commons-ui.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/camunda/camunda-commons-ui",
+  "_direct": true
+}

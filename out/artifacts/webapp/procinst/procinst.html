@@ -1,0 +1,39 @@
+<h4>Process Instance Diagram</h4>
+<!--<div id="diagram"></div>-->
+
+<div class="row" style="height: 100%">
+    <div class="col-sm-12" style="height: inherit">
+        <div class="panel panel-default" style="height: inherit">
+            <div class="panel-body" style="height: inherit">
+                <div id="diagram"></div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-sm-2">-->
+        <!--<div class="panel panel-default">-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script type="text/ng-template" id="taskinfo.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Task information</h3>
+    </div>
+    <div class="modal-body">
+        <!--<ul>-->
+        <!--<li>-->
+        <!--{{ selected }}-->
+        <!--</li>-->
+        <!--</ul>-->
+        <div ng-repeat="task in tasks">
+            <div>Наименование задачи: {{ task.actName }}</div>
+            <div>Исполнитель: {{ task.assignee }}</div>
+            <div>Предельное время выполнения: {{ task.dueDate }}</div>
+            <div>Время назначения: {{ task.startTime }}</div>
+            <div>Время выполнения: {{ task.endTime }}</div>
+            <div>Длительность выполнения: {{ task.duration }}</div>
+            <div>_____</div>
+        </div>
+        <canvas id="myChart"></canvas>
+        <!--<div ng-repeat="task1 in tasks">Наименование задачи: {{ task }}</div>-->
+    </div>
+</script>

@@ -1,0 +1,69 @@
+<!-- # CE - camunda-commons-ui/lib/widgets/variable/cam-widget-variable-dialog.html -->
+<div class="modal-header">
+  <h3>Inspect "{{ variable.name }}" variable</h3>
+</div>
+
+<div class="modal-body">
+  <div ng-if="readonly"
+       class="form-group">
+    <label>Object type name:</label>
+    <code class="form-control-static"
+          cam-widget-clipboard="variable.valueInfo.objectTypeName">{{ variable.valueInfo.objectTypeName }}</code>
+  </div>
+
+  <div ng-if="readonly"
+       class="form-group">
+    <label>Serialization Data Format:</label>
+    <code class="form-control-static"
+          cam-widget-clipboard="variable.valueInfo.serializationDataFormat">{{ variable.valueInfo.serializationDataFormat }}</code>
+  </div>
+
+  <div ng-if="!readonly"
+       class="form-group">
+    <label for="object-type-name"
+           cam-widget-clipboard="variable.valueInfo.objectTypeName">Object type name</label>
+    <input type="text"
+           id="object-type-name"
+           class="form-control"
+           ng-model="variable.valueInfo.objectTypeName" />
+  </div>
+
+  <div ng-if="!readonly"
+       class="form-group">
+    <label for="serialization-data-format"
+           cam-widget-clipboard="variable.valueInfo.serializationDataFormat">Serialization data format</label>
+    <input type="text"
+           id="serialization-data-format"
+           class="form-control"
+           ng-model="variable.valueInfo.serializationDataFormat" />
+  </div>
+
+  <div class="form-group">
+    <label for="serialized-value"
+           cam-widget-clipboard="variable.value"
+           no-tooltip
+           ng-class="{hovered: hovered === 'var-value'}">Serialized value</label>
+    <textarea ng-model="variable.value"
+              id="serialized-value"
+              rows="10"
+              class="form-control"
+              ng-readonly="readonly"
+              ng-mouseenter="toggleHover('var-value')"
+              ng-mouseleave="toggleHover()"></textarea>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-default"
+          ng-click="$dismiss('close')">
+    Close
+  </button>
+
+  <button class="btn btn-primary"
+          ng-if="!readonly"
+          ng-readonly="!hasChanged('serialized')"
+          ng-click="$close(variable)">
+    Change
+  </button>
+</div>
+<!-- / CE - camunda-commons-ui/lib/widgets/variable/cam-widget-variable-dialog.html -->

@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="activiti-monitor:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/activiti_monitor_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="activiti-monitor/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="activiti-monitor" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/java/rebel.xml" />
+      </element>
+    </root>
+  </artifact>
+</component>

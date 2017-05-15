@@ -1,0 +1,87 @@
+{
+  "private": true,
+  "name": "camunda-commons-ui",
+  "version": "7.7.0-SNAPSHOT",
+  "description": "Common files for camunda BPM platform UIs",
+  "main": "index.js",
+  "gruntConfig": {
+    "connectPort": 8070,
+    "livereloadPort": 8071
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/camunda/camunda-commons-ui.git"
+  },
+  "keywords": [
+    "camunda"
+  ],
+  "author": "Daniel Meyer <daniel.meyer@camunda.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/camunda/camunda-commons-ui/issues"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "homepage": "https://github.com/camunda/camunda-commons-ui",
+  "dependencies": {
+    "angular-animate": "1.2.29",
+    "angular-cookies": "1.2.29",
+    "angular-data-depend": "git://github.com/camunda-third-party/angular-data-depend#1.0.0-camunda",
+    "angular-loader": "1.2.29",
+    "angular-mocks": "1.2.29",
+    "angular-moment": "0.9.0",
+    "angular-resource": "1.2.29",
+    "angular-route": "1.2.29",
+    "angular-sanitize": "1.2.29",
+    "angular-scenario": "1.2.29",
+    "angular-touch": "1.2.29",
+    "angular-translate": "2.4.2",
+    "bootstrap": "3.3.6",
+    "bpmn-font": "0.2.0",
+    "bpmn-js": "0.18.4",
+    "camunda-bpm-sdk-js": "git://github.com/camunda/camunda-bpm-sdk-js#master",
+    "clipboard": "1.5.10",
+    "cmmn-js": "0.7.4",
+    "diagram-js": "0.18.2",
+    "dmn-js": "0.8.3",
+    "jquery": "2.1.1",
+    "lodash": "2.4.1",
+    "mkdirp": "0.5.1",
+    "moment": "2.9.0",
+    "persistify": "1.0.0"
+  },
+  "devDependencies": {
+    "brfs": "1.4.2",
+    "chai": "2.0.0",
+    "chai-as-promised": "4.2.0",
+    "chai-spies": "0.5.1",
+    "grunt": "0.4.5",
+    "grunt-browserify": "4.0.1",
+    "grunt-contrib-connect": "0.10.1",
+    "grunt-contrib-less": "0.9.0",
+    "grunt-eslint": "18.1.0",
+    "grunt-karma": "1.0.0",
+    "grunt-newer": "1.2.0",
+    "grunt-protractor-runner": "2.0.0",
+    "karma": "1.4.0",
+    "karma-browserify": "4.4.2",
+    "karma-chrome-launcher": "0.1.4",
+    "karma-firefox-launcher": "0.1.3",
+    "karma-junit-reporter": "0.2.2",
+    "karma-mocha": "0.1.6",
+    "karma-phantomjs-launcher": "0.1.4",
+    "load-grunt-tasks": "2.0.0",
+    "mocha": "2.1.0",
+    "xunit-file": "0.0.6"
+  },
+  "optionalDependencies": {
+    "grunt-contrib-watch": "0.6.1",
+    "marked": "0.3.3"
+  }
+}

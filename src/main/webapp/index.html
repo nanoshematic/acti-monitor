@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="activitiMonitor">
+<head>
+    <meta charset="utf-8">
+    <title>Activiti Monitor</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 3rd party dependencies -->
+    <link href="libs/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">-->
+    <!-- Core application dependencies -->
+    <!--<link href="portal.css" rel="stylesheet">-->
+    <style type="text/css">
+        html, body, #diagram {
+            height: 100%
+        }
+
+        .diagram-note {
+            background-color: rgba(180, 92, 73, 0.7);
+            color: White;
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 10px;
+            padding: 5px;
+            min-height: 20px;
+            width: 50px;
+            text-align: center;
+        }
+
+        .task-info {
+            background-color: dodgerblue;
+            color: White;
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 10px;
+            padding: 5px;
+            min-height: 20px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .task-info-warning {
+            background-color: red;
+            color: White;
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 10px;
+            padding: 5px;
+            min-height: 20px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .task-count {
+            background-color: rgba(26, 180, 44, 0.7);
+            color: #000000;
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 14px;
+            padding: 5px;
+            min-height: 14px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .highlight:not(.djs-shape) .djs-visual > :nth-child(1) {
+            stroke: red !important;
+            stroke-width: 3 !important;
+            /*fill: red !important;*/
+        }
+
+        .highlight-overdue-task:not(.djs-connection) .djs-visual > :nth-child(1) {
+            fill: red !important;
+        }
+
+        .highlight-normal-task:not(.djs-connection) .djs-visual > :nth-child(1) {
+            fill: #10db09 !important;
+        }
+
+        .highlight:not(.djs-connection) .djs-visual > :nth-child(1) {
+            /*fill: #fcf65c !important; !* color elements as green *!*/
+            stroke: red !important;
+            stroke-width: 4 !important;
+        }
+
+        .highlight-overlay {
+            background-color: green; /* color elements as green */
+            opacity: 0.4;
+            pointer-events: none; /* no pointer events, allows clicking through onto the element */
+        }
+
+    </style>
+    <!--<script src="libs/bower_components/requirejs/require.js"></script>-->
+</head>
+
+<script src="libs/bower_components/angular/angular.js"></script>
+<script src="libs/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="libs/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="libs/bower_components/angular-route/angular-route.min.js"></script>
+<script src="libs/bower_components/chart.js/dist/Chart.min.js"></script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>-->
+
+<body ng-controller="AppController">
+<div style="background-color:rgba(0,0,0,0.29)">
+    <!--<p>Перейти к <a href="#first">первой</a> или <a href="#second">второй странице</a>.</p>-->
+    <!--<div ng-view></div>-->
+    <!--<ul class="menu">-->
+        <!--<li><a href="#!/view1">view1</a></li>-->
+        <!--<li><a href="#!/view2">view2</a></li>-->
+    <!--</ul>-->
+    <!--<ul class="nav nav-tabs">-->
+        <!--<li class="active"><a href="#">Главная</a></li>-->
+        <!--<li><a href="#!/view1">Профиль</a></li>-->
+        <!--<li><a href="#!/view2">Сообщение</a></li>-->
+    <!--</ul>-->
+    <ul class="nav nav-tabs">
+        <li><a href="#!/dashboard">Dashboard</a></li>
+        <li><a href="#!/procdef">Process Definition</a></li>
+    </ul>
+</div>
+<div ng-view style="height: 90%"></div>
+<!--<div id="canvas"></div>-->
+
+
+<script src="scripts/app.js"></script>
+</body>
+<!--<body >-->
+
+
+<!--</body>-->
+
+<!-- 3rd party dependencies -->
+<script src="libs/bower_components/bpmn-js/dist/bpmn-navigated-viewer.js"></script>
+<script src="libs/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="libs/bower_components/heatmap-js/heatmap.js"></script>
+<script src="procdef/procdef.js"></script>
+<script src="procinst/procinst.js"></script>
+<script src="dashboard/dashboard.js"></script>
+
+</html>

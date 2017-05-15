@@ -1,0 +1,77 @@
+<table class="table">
+
+    <thead>
+    <tr>
+        <th>Наменование</th>
+        <th>Overdue count</th>
+        <th>At risk count</th>
+        <th>Total count</th>
+        <th>Key</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="process in processes" ng-click="setSelected();">
+        <td>{{ process.name }}</td>
+        <td>{{ process.overdueCount }}</td>
+        <td>{{ process.atRiskCount }}</td>
+        <td>{{ process.count }}</td>
+        <td>
+            <!--{{ process.key }}-->
+            <canvas id="{{process.key}}canvas" height="30"></canvas>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script type="text/ng-template" id="processInfo.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Open tasks</h3>
+    </div>
+    <div class="modal-body">
+        <h4 ng-click="openDefinition();">Process: {{selected.name}}</h4>
+        <!--<div class="col-sm-6">-->
+            <!--<div>Total: {{selected.count}}</div>-->
+            <!--<div>At risk: {{selected.atRiskCount}}</div>-->
+            <!--<div>Overdue: {{selected.overdueCount}}</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-12">-->
+            <canvas id="tasksChart" height="70"></canvas>
+        <!--</div>-->
+        <h4>Overdue</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Due date</th>
+                <th>Assignee</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="task in overdueTasks" ng-click="openInstance();">
+                <td>{{ task.name }}</td>
+                <td>{{ task.dueDate }}</td>
+                <td>{{ task.assignee }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>At Risk</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Due date</th>
+                <th>Assignee</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="task in atRiskTasks" ng-click="openInstance();">
+                <td>{{ task.name }}</td>
+                <td>{{ task.dueDate }}</td>
+                <td>{{ task.assignee }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</script>

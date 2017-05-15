@@ -1,0 +1,15 @@
+{
+  "name": "bpmn-js-examples",
+  "homepage": "https://github.com/bpmn-io/bpmn-js-examples",
+  "version": "0.14.0",
+  "_release": "0.14.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.14.0",
+    "commit": "cbf1469b445cfd2022dbadfa915b06dc4dcd1e6d"
+  },
+  "_source": "https://github.com/bpmn-io/bpmn-js-examples.git",
+  "_target": "^0.14.0",
+  "_originalSource": "bpmn-js-examples",
+  "_direct": true
+}

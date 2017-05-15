@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="activiti-rest">
+    <output-path>$PROJECT_DIR$/out/artifacts/activiti_rest</output-path>
+    <root id="root">
+      <element id="dir-copy" path="$PROJECT_DIR$/../../ts/apache-tomee-webprofile-1.7.2/webapps/activiti-rest" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,86 @@
+<span ng-show="!editing"
+      ng-click="startEditing()"
+      ng-transclude
+      class="view-value">
+</span>
+
+<span ng-if="editing && (varType === 'datetime' || varType === 'date' || varType === 'time')"
+      class="preview">
+  {{ dateValue | camDate }}
+</span>
+
+<span ng-if="editing"
+      class="edit">
+
+  <input ng-if="simpleField"
+         class="form-control"
+         type="{{ varType }}"
+         ng-model="editValue"
+         ng-keydown="handleKeydown($event)"
+         placeholder="{{ placeholder }}" />
+
+  <span ng-show="varType === 'datetime' || varType === 'date' || varType === 'time'"
+        class="cam-widget-inline-field field-control">
+
+    <datepicker class="datepicker"
+                ng-if="varType === 'datetime' || varType === 'date'"
+                type="text"
+                ng-required="true"
+                is-open="datePickerOptions.isOpen"
+                show-button-bar="false"
+                ng-keydown="trapKeyboard($event, true); cancelOnEsc($event);"
+
+                ng-model="dateValue"
+                ng-change="changeDate(this)"></datepicker>
+
+    <timepicker class="timepicker"
+                ng-if="varType === 'datetime' || varType === 'time'"
+                show-meridian="false"
+
+                ng-model="dateValue"
+                ng-keydown="cancelOnEsc($event);"
+                ng-change="changeDate(this)"></timepicker>
+  </span>
+
+  <input ng-if="varType === 'option' && options[0].value"
+         class="form-control"
+         type="text"
+         ng-model="editValue"
+         ng-keydown="handleKeydown($event)"
+         typeahead="option as option.value for option in options | filter:$viewValue:instantTypeahead"
+         typeahead-on-select="saveSelection($item)"
+         instant-typeahead />
+  <input ng-if="varType === 'option' && !options[0].value"
+         class="form-control"
+         type="text"
+         ng-model="editValue"
+         ng-keydown="handleKeydown($event)"
+         typeahead="option for option in options | filter:$viewValue:instantTypeahead"
+         typeahead-on-select="saveSelection($item)"
+         instant-typeahead />
+
+  <span ng-show="varType !== 'option'"
+        class="cam-widget-inline-field btn-group">
+    <button type="button"
+            class="btn btn-xs btn-default"
+            ng-click="changeType()"
+            ng-if="flexible">
+      <span class="glyphicon"
+            ng-class="'glyphicon-' + (varType === 'text' ? 'calendar' : 'pencil')"></span>
+    </button>
+
+    <button type="button"
+            class="btn btn-xs btn-default"
+            ng-click="applyChange($event);"
+            ng-keydown="cancelOnEsc($event);">
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
+
+    <button type="button"
+            class="btn btn-xs btn-default"
+            ng-click="cancelChange($event)"
+            ng-keydown="trapKeyboard($event); cancelOnEsc($event);">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+  </span>
+</span>

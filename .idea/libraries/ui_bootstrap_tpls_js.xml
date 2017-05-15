@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="ui-bootstrap-tpls.js" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/src/main/webapp/libs/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/main/webapp/libs/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
